@@ -1,0 +1,54 @@
+1 {
+  1: "a"
+  2: 2
+  3: "ae"
+  4 {
+    1: "12345"
+    2: 0
+  }
+}
+people {
+  name: "a"
+  id: 2
+  email: "ae"
+  phones {
+    number: "12345"
+    type: MOBILE
+  }
+}
+1 {
+  1: "a"
+  2: 2
+  3: "ae"
+  4 {
+    1: "12345"
+    2: 0
+  }
+}
+1 {
+  1: "a"
+  2: 2
+  3: "ae"
+  4 {
+    1: "12345"
+    2: 0
+  }
+}
+people {
+  name: "a"
+  id: 2
+  email: "ae"
+  phones {
+    number: "12345"
+    2: 0
+  }
+}
+people {
+  name: "a"
+  id: 2
+  email: "ae"
+  phones {
+    number: "12345"
+    type: MOBILE
+  }
+}
