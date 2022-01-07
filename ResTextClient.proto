@@ -1,0 +1,32 @@
+syntax = "proto3";
+option cc_generic_services = false;
+package com.tencent.nk.xlsRes;
+//import "ResKeywords.proto";
+
+
+// @noSvr
+
+message ClientTextInfo {
+    optional string key = 1;
+    optional string zh_CN = 2;
+    optional string zh_GL = 3;
+    optional string zh_TW = 4;
+    optional string en_US = 5;
+    optional string ja_JP = 6;
+    optional string ko_KR = 7;
+    optional string de_DE = 8;
+    optional string fr_FR = 9;
+    optional string es_ES = 10;
+    optional string it_IT = 11;
+    optional string ru_RU = 12;
+    optional string ar_AR = 13;
+    optional string tr_TR = 14;
+    optional string th_TH = 15;
+    optional string ms_MY = 16;
+    optional string id_ID = 17;
+    optional string vi_VN = 18;
+    optional string pt_PT = 19;
+}
+message table_ClientTextInfo {
+    repeated ClientTextInfo rows = 1;
+}
