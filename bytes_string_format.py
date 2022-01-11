@@ -1,8 +1,10 @@
 import sys
+from google.protobuf import any_pb2
 
 if len(sys.argv) != 2:
     print("Usage:", sys.argv[0], "ADDRESS_BOOK_FILE")
     sys.exit(-1)
+
 # Print binary array
 try:
     f = open(sys.argv[1], "rb")
@@ -25,6 +27,10 @@ try:
     # print(bin_replaced)
     # f.write(bin_replaced)
     # f.close()
+
 except FileNotFoundError:
     print("该文件不存在")
     sys.exit(-1)
+
+
+
