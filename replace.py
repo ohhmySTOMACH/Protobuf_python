@@ -1,12 +1,8 @@
 # encoding: utf-8
 # -*- coding: utf-8 -*-
-
 import sys
-# import os
-# from builtins import FileNotFoundError
-import blackboxprotobuf as bbp
 from optparse import OptionParser
-# from google.protobuf import message, text_format, text_encoding
+from google.protobuf import message, text_format, text_encoding
 
 
 # Helper Function:
@@ -21,13 +17,13 @@ def print_target(table_client_text_info):
             print("message DOES NOT EXIST")
 
 
-# # Replace the byte string in the target binary file
-# def replace_target(table_client_text_info):
-#     for client_text_info in table_client_text_info.rows:
-#         if client_text_info.key == "C_LOGIN_BTN_QQ":
-#             # replace_string = client_text_info.zh_CN + "u1"
-#             client_text_info.zh_CN = "与QQ好友玩 u1"
-#             print("REPLACE COMPLETE!!")
+# Replace the byte string in the target binary file
+def replace_target(table_client_text_info):
+    for client_text_info in table_client_text_info.rows:
+        if client_text_info.key == "C_LOGIN_BTN_QQ":
+            # replace_string = client_text_info.zh_CN + "u1"
+            client_text_info.zh_CN = "与QQ好友玩 u1"
+            print("REPLACE COMPLETE!!")
 
 
 # Replace the byte string not depends on the .proto file
@@ -74,19 +70,19 @@ def run(options):
 
         table_client_text_info = ResTextClient_pb2.table_ClientTextInfo()
         table_client_text_info.ParseFromString(bytes_string)
-        # print(f"{file_name} PARSING DONE!")
         print("{0} PARSING DONE!".format(file_name))
         # print(table_client_text_info)
         # Replace the string depends on the .proto file
-        # replace_target(table_client_text_info)
-        # final_bytes = head + table_client_text_info.SerializeToString()
-        # f = open(file_name, "wb")
-        # f.write(final_bytes)
-        # f.close()
+        replace_target(table_client_text_info)
+        final_bytes = head + table_client_text_info.SerializeToString()
+        f = open(file_name, "wb")
+        f.write(final_bytes)
+        f.close()
     elif options.wiretype:
+        import blackboxprotobuf as bbp
+
         # Decode .pbin file to dict type
         txt_decode, typedef = bbp.decode_message(bytes_string)  # 返回的文件数据类型是dict dict of a list of dicts
-        # print(f'{file_name} DECODE DONE!')
         print("{0} DECODE DONE!".format(file_name))
         replace_target_bin(txt_decode)
         # Encode the dict and update the .pbin file

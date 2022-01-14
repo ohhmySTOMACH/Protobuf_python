@@ -1,3 +1,4 @@
+com.tencent.nk.xlsRes.table_ClientTextInfo
 
 
 	Bf_Type_1战争加成
@@ -10254,8 +10255,8 @@ f
 ITEM_25003_DESCTXTIDx驯马典籍是坐骑突破到下一个阶段的关键材料，进入下一阶段坐骑可以获得新的效果词条。
 o
 ITEM_25004_DESCTXTIDW一种常用于为战马打造装备的精铁，是坐骑装备升级的必要材料。
- 
-C_LOGIN_BTN_QQ与QQ好友玩
+#
+C_LOGIN_BTN_QQ与QQ好友玩 u1
 $
 C_LOGIN_BTN_WX与微信好友玩
 A

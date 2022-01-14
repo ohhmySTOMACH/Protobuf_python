@@ -18,7 +18,10 @@ f.close()
 #     b'\x0eC_LOGIN_BTN_QQ\x12\x11\xe4\xb8\x8eQQ\xe5\xa5\xbd\xe5\x8f\x8b\xe7\x8e\xa9\n',
 #     b'\x0eC_LOGIN_BTN_QQ\x12\x11\xe4\xb8\x8eQQ\xe5\xa5\xbd\xe5\x8f\x8b\xe7\x8e\xa9 u1\n')
 target = b'\x12\x0e\xe4\xb8\x8eQQ\xe5\xa5\xbd\xe5\x8f\x8b\xe7\x8e\xa9\n'
-print(bytes_string.index(target))
+try:
+    print("Index: ", bytes_string.index(target))
+except ValueError:
+    print("Target not found")
 # string = "与QQ好友玩 u1"
 # encode = encode_string(string) # bytes_string type
 # bytes_string.replace(target, enocde)

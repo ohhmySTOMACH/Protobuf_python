@@ -1,5 +1,5 @@
 syntax = "proto3";
-option cc_generic_services = false;
+//option cc_generic_services = false;
 package com.tencent.nk.xlsRes;
 //import "ResKeywords.proto";
 
