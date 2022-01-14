@@ -1,8 +1,15 @@
+# encoding: utf-8
+# -*- coding: utf-8 -*-
+
 import sys
-from google.protobuf import message, text_format, text_encoding
-import ResTextClient_pb2
+# import os
+# from builtins import FileNotFoundError
+import blackboxprotobuf as bbp
+from optparse import OptionParser
+# from google.protobuf import message, text_format, text_encoding
 
 
+# Helper Function:
 # Iterates though all client_text_info in the table_client_text_info and prints info about them.
 def print_target(table_client_text_info):
     for client_text_info in table_client_text_info.rows:
@@ -11,70 +18,90 @@ def print_target(table_client_text_info):
         if client_text_info.HasField('zh_CN'):
             print("zh_CN: ", client_text_info.zh_CN)
         else:
-            print("Message 不存在")
+            print("message DOES NOT EXIST")
 
 
-# Replace the byte string in the target binary file
-def replace_target(table_client_text_info):
-    for client_text_info in table_client_text_info.rows:
-        # if key == "C_LOGIN_BTN_QQ" replace zh_CN with "与QQ好友玩 u1"
-        if client_text_info.key == "C_LOGIN_BTN_QQ":
-            # replace_string = client_text_info.zh_CN + "u1"
-            client_text_info.zh_CN = "与QQ好友玩 u1"
-            print("字符串已替换成功")
+# # Replace the byte string in the target binary file
+# def replace_target(table_client_text_info):
+#     for client_text_info in table_client_text_info.rows:
+#         if client_text_info.key == "C_LOGIN_BTN_QQ":
+#             # replace_string = client_text_info.zh_CN + "u1"
+#             client_text_info.zh_CN = "与QQ好友玩 u1"
+#             print("REPLACE COMPLETE!!")
 
 
 # Replace the byte string not depends on the .proto file
 def replace_target_bin(bytes_string):
-    # bin_array = bytearray(b'\x0eC_LOGIN_BTN_QQ\x12\x11\xe4\xb8\x8eQQ\xe5\xa5\xbd\xe5\x8f\x8b\xe7\x8e\xa9')
-    # bin_replaced = bin_array + b' u1'
-    bin_replaced = bytes_string.replace(
-        b'\x0eC_LOGIN_BTN_QQ\x12\x0e\xe4\xb8\x8eQQ\xe5\xa5\xbd\xe5\x8f\x8b\xe7\x8e\xa9\n',
-        b'\x0eC_LOGIN_BTN_QQ\x12\x11\xe4\xb8\x8eQQ\xe5\xa5\xbd\xe5\x8f\x8b\xe7\x8e\xa9 u1\n')
-    print("字符串已替换成功")
-    return bin_replaced
+    for row in bytes_string.get('1'):
+        if row.get('1') == b'C_LOGIN_BTN_QQ':
+            # Replace the text in dict
+            row.get('2')
+            # print(bin_raw)
+            row['2'] = '与QQ好友玩 u1'
+            # print(row)
+            print("REPLACE COMPLETE!!")
+
+
+def load_parameter():
+    parser = OptionParser(usage="usage: replace.py [options] file_name", add_help_option=False)
+
+    parser.add_option("-h", "--help", action="help", help="show this help message and exit")
+    parser.add_option("-p", "--protobuf", help="依赖proto替换文本")
+    parser.add_option("-w", "--wiretype", help="不依赖proto,基于wire type替换文本")
+
+    options, args = parser.parse_args()
+    # print(options, args)
+    return options
+
+
+def run(options):
+    # Read bytes from the binary file
+    try:
+        file_name = sys.argv[2]
+        f = open(file_name, "rb")
+        bytes_string = f.read()
+        f.close()
+        # Remove Head Before Parsing
+        head = b'com.tencent.nk.xlsRes.table_ClientTextInfo\n'
+        bytes_string = bytes_string.replace(head, b'')
+        # print(bin_array)
+    except IOError:
+        print("FILE DOES NOT EXIST")
+        sys.exit(-1)
+
+    if options.protobuf:
+        import ResTextClient_pb2
+
+        table_client_text_info = ResTextClient_pb2.table_ClientTextInfo()
+        table_client_text_info.ParseFromString(bytes_string)
+        # print(f"{file_name} PARSING DONE!")
+        print("{0} PARSING DONE!".format(file_name))
+        # print(table_client_text_info)
+        # Replace the string depends on the .proto file
+        # replace_target(table_client_text_info)
+        # final_bytes = head + table_client_text_info.SerializeToString()
+        # f = open(file_name, "wb")
+        # f.write(final_bytes)
+        # f.close()
+    elif options.wiretype:
+        # Decode .pbin file to dict type
+        txt_decode, typedef = bbp.decode_message(bytes_string)  # 返回的文件数据类型是dict dict of a list of dicts
+        # print(f'{file_name} DECODE DONE!')
+        print("{0} DECODE DONE!".format(file_name))
+        replace_target_bin(txt_decode)
+        # Encode the dict and update the .pbin file
+        msg_encode = bbp.encode_message(txt_decode, typedef)
+        f = open(file_name, 'wb')
+        f.write(head + msg_encode)
+        f.close()
 
 
 # Main Body
-if len(sys.argv) != 2:
-    print("使用方法:", sys.argv[0], "文件名")
-    sys.exit(-1)
+if __name__ == '__main__':
+    if len(sys.argv) < 3:
+        load_parameter()
+        sys.exit(-1)
+    # print(sys.argv)
+    options = load_parameter()
+    run(options)
 
-# Read bytes from the binary file
-try:
-    f = open(sys.argv[1], "rb")
-    bytes_string = f.read()
-    f.close()
-    # Remove Head Before Parsing
-    head = b'com.tencent.nk.xlsRes.table_ClientTextInfo\n'
-    bytes_string = bytes_string.replace(head, b'')
-    # print(bin_array)
-except FileNotFoundError:
-    print("该文件不存在")
-    sys.exit(-1)
-
-# print_target(table_client_text_info)
-choice = input("选择替换文本的方法：\n1. 依赖proto   \n2. 不依赖proto \n请输入 1 或 2: ")
-while choice:
-    if choice == '1':
-        table_client_text_info = ResTextClient_pb2.table_ClientTextInfo()
-        table_client_text_info.ParseFromString(bytes_string)
-        print("反序列化成功")
-        # print(table_client_text_info)
-        # Replace the string depends on the .proto file
-        replace_target(table_client_text_info)
-        final_bytes = head + table_client_text_info.SerializeToString()
-        f = open(sys.argv[1], "wb")
-        f.write(final_bytes)
-        f.close()
-        break
-    elif choice == '2':
-        # Replace the string not depend on the .proto file
-        bin_replaced = replace_target_bin(bytes_string)
-        final_bytes = head + bin_replaced
-        f = open(sys.argv[1], "wb")
-        f.write(final_bytes)
-        f.close()
-        break
-    else:
-        choice = input("输入错误，请重新输入：")
