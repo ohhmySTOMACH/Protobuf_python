@@ -3,7 +3,6 @@
 # source: ResTextClient.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
-from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -14,12 +13,364 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13ResTextClient.proto\x12\x15\x63om.tencent.nk.xlsRes\"\xc6\x04\n\x0e\x43lientTextInfo\x12\x10\n\x03key\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05zh_CN\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x12\n\x05zh_GL\x18\x03 \x01(\tH\x02\x88\x01\x01\x12\x12\n\x05zh_TW\x18\x04 \x01(\tH\x03\x88\x01\x01\x12\x12\n\x05\x65n_US\x18\x05 \x01(\tH\x04\x88\x01\x01\x12\x12\n\x05ja_JP\x18\x06 \x01(\tH\x05\x88\x01\x01\x12\x12\n\x05ko_KR\x18\x07 \x01(\tH\x06\x88\x01\x01\x12\x12\n\x05\x64\x65_DE\x18\x08 \x01(\tH\x07\x88\x01\x01\x12\x12\n\x05\x66r_FR\x18\t \x01(\tH\x08\x88\x01\x01\x12\x12\n\x05\x65s_ES\x18\n \x01(\tH\t\x88\x01\x01\x12\x12\n\x05it_IT\x18\x0b \x01(\tH\n\x88\x01\x01\x12\x12\n\x05ru_RU\x18\x0c \x01(\tH\x0b\x88\x01\x01\x12\x12\n\x05\x61r_AR\x18\r \x01(\tH\x0c\x88\x01\x01\x12\x12\n\x05tr_TR\x18\x0e \x01(\tH\r\x88\x01\x01\x12\x12\n\x05th_TH\x18\x0f \x01(\tH\x0e\x88\x01\x01\x12\x12\n\x05ms_MY\x18\x10 \x01(\tH\x0f\x88\x01\x01\x12\x12\n\x05id_ID\x18\x11 \x01(\tH\x10\x88\x01\x01\x12\x12\n\x05vi_VN\x18\x12 \x01(\tH\x11\x88\x01\x01\x12\x12\n\x05pt_PT\x18\x13 \x01(\tH\x12\x88\x01\x01\x42\x06\n\x04_keyB\x08\n\x06_zh_CNB\x08\n\x06_zh_GLB\x08\n\x06_zh_TWB\x08\n\x06_en_USB\x08\n\x06_ja_JPB\x08\n\x06_ko_KRB\x08\n\x06_de_DEB\x08\n\x06_fr_FRB\x08\n\x06_es_ESB\x08\n\x06_it_ITB\x08\n\x06_ru_RUB\x08\n\x06_ar_ARB\x08\n\x06_tr_TRB\x08\n\x06_th_THB\x08\n\x06_ms_MYB\x08\n\x06_id_IDB\x08\n\x06_vi_VNB\x08\n\x06_pt_PT\"K\n\x14table_ClientTextInfo\x12\x33\n\x04rows\x18\x01 \x03(\x0b\x32%.com.tencent.nk.xlsRes.ClientTextInfob\x06proto3')
+DESCRIPTOR = _descriptor.FileDescriptor(
+  name='ResTextClient.proto',
+  package='com.tencent.nk.xlsRes',
+  syntax='proto3',
+  serialized_options=None,
+  create_key=_descriptor._internal_create_key,
+  serialized_pb=b'\n\x13ResTextClient.proto\x12\x15\x63om.tencent.nk.xlsRes\"\xc6\x04\n\x0e\x43lientTextInfo\x12\x10\n\x03key\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x12\n\x05zh_CN\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x12\n\x05zh_GL\x18\x03 \x01(\tH\x02\x88\x01\x01\x12\x12\n\x05zh_TW\x18\x04 \x01(\tH\x03\x88\x01\x01\x12\x12\n\x05\x65n_US\x18\x05 \x01(\tH\x04\x88\x01\x01\x12\x12\n\x05ja_JP\x18\x06 \x01(\tH\x05\x88\x01\x01\x12\x12\n\x05ko_KR\x18\x07 \x01(\tH\x06\x88\x01\x01\x12\x12\n\x05\x64\x65_DE\x18\x08 \x01(\tH\x07\x88\x01\x01\x12\x12\n\x05\x66r_FR\x18\t \x01(\tH\x08\x88\x01\x01\x12\x12\n\x05\x65s_ES\x18\n \x01(\tH\t\x88\x01\x01\x12\x12\n\x05it_IT\x18\x0b \x01(\tH\n\x88\x01\x01\x12\x12\n\x05ru_RU\x18\x0c \x01(\tH\x0b\x88\x01\x01\x12\x12\n\x05\x61r_AR\x18\r \x01(\tH\x0c\x88\x01\x01\x12\x12\n\x05tr_TR\x18\x0e \x01(\tH\r\x88\x01\x01\x12\x12\n\x05th_TH\x18\x0f \x01(\tH\x0e\x88\x01\x01\x12\x12\n\x05ms_MY\x18\x10 \x01(\tH\x0f\x88\x01\x01\x12\x12\n\x05id_ID\x18\x11 \x01(\tH\x10\x88\x01\x01\x12\x12\n\x05vi_VN\x18\x12 \x01(\tH\x11\x88\x01\x01\x12\x12\n\x05pt_PT\x18\x13 \x01(\tH\x12\x88\x01\x01\x42\x06\n\x04_keyB\x08\n\x06_zh_CNB\x08\n\x06_zh_GLB\x08\n\x06_zh_TWB\x08\n\x06_en_USB\x08\n\x06_ja_JPB\x08\n\x06_ko_KRB\x08\n\x06_de_DEB\x08\n\x06_fr_FRB\x08\n\x06_es_ESB\x08\n\x06_it_ITB\x08\n\x06_ru_RUB\x08\n\x06_ar_ARB\x08\n\x06_tr_TRB\x08\n\x06_th_THB\x08\n\x06_ms_MYB\x08\n\x06_id_IDB\x08\n\x06_vi_VNB\x08\n\x06_pt_PT\"K\n\x14table_ClientTextInfo\x12\x33\n\x04rows\x18\x01 \x03(\x0b\x32%.com.tencent.nk.xlsRes.ClientTextInfob\x06proto3'
+)
 
 
 
-_CLIENTTEXTINFO = DESCRIPTOR.message_types_by_name['ClientTextInfo']
-_TABLE_CLIENTTEXTINFO = DESCRIPTOR.message_types_by_name['table_ClientTextInfo']
+
+_CLIENTTEXTINFO = _descriptor.Descriptor(
+  name='ClientTextInfo',
+  full_name='com.tencent.nk.xlsRes.ClientTextInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='com.tencent.nk.xlsRes.ClientTextInfo.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='zh_CN', full_name='com.tencent.nk.xlsRes.ClientTextInfo.zh_CN', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='zh_GL', full_name='com.tencent.nk.xlsRes.ClientTextInfo.zh_GL', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='zh_TW', full_name='com.tencent.nk.xlsRes.ClientTextInfo.zh_TW', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='en_US', full_name='com.tencent.nk.xlsRes.ClientTextInfo.en_US', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ja_JP', full_name='com.tencent.nk.xlsRes.ClientTextInfo.ja_JP', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ko_KR', full_name='com.tencent.nk.xlsRes.ClientTextInfo.ko_KR', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='de_DE', full_name='com.tencent.nk.xlsRes.ClientTextInfo.de_DE', index=7,
+      number=8, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='fr_FR', full_name='com.tencent.nk.xlsRes.ClientTextInfo.fr_FR', index=8,
+      number=9, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='es_ES', full_name='com.tencent.nk.xlsRes.ClientTextInfo.es_ES', index=9,
+      number=10, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='it_IT', full_name='com.tencent.nk.xlsRes.ClientTextInfo.it_IT', index=10,
+      number=11, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ru_RU', full_name='com.tencent.nk.xlsRes.ClientTextInfo.ru_RU', index=11,
+      number=12, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ar_AR', full_name='com.tencent.nk.xlsRes.ClientTextInfo.ar_AR', index=12,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='tr_TR', full_name='com.tencent.nk.xlsRes.ClientTextInfo.tr_TR', index=13,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='th_TH', full_name='com.tencent.nk.xlsRes.ClientTextInfo.th_TH', index=14,
+      number=15, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ms_MY', full_name='com.tencent.nk.xlsRes.ClientTextInfo.ms_MY', index=15,
+      number=16, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='id_ID', full_name='com.tencent.nk.xlsRes.ClientTextInfo.id_ID', index=16,
+      number=17, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='vi_VN', full_name='com.tencent.nk.xlsRes.ClientTextInfo.vi_VN', index=17,
+      number=18, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='pt_PT', full_name='com.tencent.nk.xlsRes.ClientTextInfo.pt_PT', index=18,
+      number=19, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='_key', full_name='com.tencent.nk.xlsRes.ClientTextInfo._key',
+      index=0, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_zh_CN', full_name='com.tencent.nk.xlsRes.ClientTextInfo._zh_CN',
+      index=1, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_zh_GL', full_name='com.tencent.nk.xlsRes.ClientTextInfo._zh_GL',
+      index=2, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_zh_TW', full_name='com.tencent.nk.xlsRes.ClientTextInfo._zh_TW',
+      index=3, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_en_US', full_name='com.tencent.nk.xlsRes.ClientTextInfo._en_US',
+      index=4, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_ja_JP', full_name='com.tencent.nk.xlsRes.ClientTextInfo._ja_JP',
+      index=5, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_ko_KR', full_name='com.tencent.nk.xlsRes.ClientTextInfo._ko_KR',
+      index=6, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_de_DE', full_name='com.tencent.nk.xlsRes.ClientTextInfo._de_DE',
+      index=7, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_fr_FR', full_name='com.tencent.nk.xlsRes.ClientTextInfo._fr_FR',
+      index=8, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_es_ES', full_name='com.tencent.nk.xlsRes.ClientTextInfo._es_ES',
+      index=9, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_it_IT', full_name='com.tencent.nk.xlsRes.ClientTextInfo._it_IT',
+      index=10, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_ru_RU', full_name='com.tencent.nk.xlsRes.ClientTextInfo._ru_RU',
+      index=11, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_ar_AR', full_name='com.tencent.nk.xlsRes.ClientTextInfo._ar_AR',
+      index=12, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_tr_TR', full_name='com.tencent.nk.xlsRes.ClientTextInfo._tr_TR',
+      index=13, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_th_TH', full_name='com.tencent.nk.xlsRes.ClientTextInfo._th_TH',
+      index=14, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_ms_MY', full_name='com.tencent.nk.xlsRes.ClientTextInfo._ms_MY',
+      index=15, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_id_ID', full_name='com.tencent.nk.xlsRes.ClientTextInfo._id_ID',
+      index=16, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_vi_VN', full_name='com.tencent.nk.xlsRes.ClientTextInfo._vi_VN',
+      index=17, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+    _descriptor.OneofDescriptor(
+      name='_pt_PT', full_name='com.tencent.nk.xlsRes.ClientTextInfo._pt_PT',
+      index=18, containing_type=None,
+      create_key=_descriptor._internal_create_key,
+    fields=[]),
+  ],
+  serialized_start=47,
+  serialized_end=629,
+)
+
+
+_TABLE_CLIENTTEXTINFO = _descriptor.Descriptor(
+  name='table_ClientTextInfo',
+  full_name='com.tencent.nk.xlsRes.table_ClientTextInfo',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='rows', full_name='com.tencent.nk.xlsRes.table_ClientTextInfo.rows', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=631,
+  serialized_end=706,
+)
+
+_CLIENTTEXTINFO.oneofs_by_name['_key'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['key'])
+_CLIENTTEXTINFO.fields_by_name['key'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_key']
+_CLIENTTEXTINFO.oneofs_by_name['_zh_CN'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['zh_CN'])
+_CLIENTTEXTINFO.fields_by_name['zh_CN'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_zh_CN']
+_CLIENTTEXTINFO.oneofs_by_name['_zh_GL'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['zh_GL'])
+_CLIENTTEXTINFO.fields_by_name['zh_GL'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_zh_GL']
+_CLIENTTEXTINFO.oneofs_by_name['_zh_TW'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['zh_TW'])
+_CLIENTTEXTINFO.fields_by_name['zh_TW'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_zh_TW']
+_CLIENTTEXTINFO.oneofs_by_name['_en_US'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['en_US'])
+_CLIENTTEXTINFO.fields_by_name['en_US'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_en_US']
+_CLIENTTEXTINFO.oneofs_by_name['_ja_JP'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['ja_JP'])
+_CLIENTTEXTINFO.fields_by_name['ja_JP'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_ja_JP']
+_CLIENTTEXTINFO.oneofs_by_name['_ko_KR'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['ko_KR'])
+_CLIENTTEXTINFO.fields_by_name['ko_KR'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_ko_KR']
+_CLIENTTEXTINFO.oneofs_by_name['_de_DE'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['de_DE'])
+_CLIENTTEXTINFO.fields_by_name['de_DE'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_de_DE']
+_CLIENTTEXTINFO.oneofs_by_name['_fr_FR'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['fr_FR'])
+_CLIENTTEXTINFO.fields_by_name['fr_FR'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_fr_FR']
+_CLIENTTEXTINFO.oneofs_by_name['_es_ES'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['es_ES'])
+_CLIENTTEXTINFO.fields_by_name['es_ES'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_es_ES']
+_CLIENTTEXTINFO.oneofs_by_name['_it_IT'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['it_IT'])
+_CLIENTTEXTINFO.fields_by_name['it_IT'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_it_IT']
+_CLIENTTEXTINFO.oneofs_by_name['_ru_RU'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['ru_RU'])
+_CLIENTTEXTINFO.fields_by_name['ru_RU'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_ru_RU']
+_CLIENTTEXTINFO.oneofs_by_name['_ar_AR'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['ar_AR'])
+_CLIENTTEXTINFO.fields_by_name['ar_AR'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_ar_AR']
+_CLIENTTEXTINFO.oneofs_by_name['_tr_TR'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['tr_TR'])
+_CLIENTTEXTINFO.fields_by_name['tr_TR'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_tr_TR']
+_CLIENTTEXTINFO.oneofs_by_name['_th_TH'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['th_TH'])
+_CLIENTTEXTINFO.fields_by_name['th_TH'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_th_TH']
+_CLIENTTEXTINFO.oneofs_by_name['_ms_MY'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['ms_MY'])
+_CLIENTTEXTINFO.fields_by_name['ms_MY'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_ms_MY']
+_CLIENTTEXTINFO.oneofs_by_name['_id_ID'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['id_ID'])
+_CLIENTTEXTINFO.fields_by_name['id_ID'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_id_ID']
+_CLIENTTEXTINFO.oneofs_by_name['_vi_VN'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['vi_VN'])
+_CLIENTTEXTINFO.fields_by_name['vi_VN'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_vi_VN']
+_CLIENTTEXTINFO.oneofs_by_name['_pt_PT'].fields.append(
+  _CLIENTTEXTINFO.fields_by_name['pt_PT'])
+_CLIENTTEXTINFO.fields_by_name['pt_PT'].containing_oneof = _CLIENTTEXTINFO.oneofs_by_name['_pt_PT']
+_TABLE_CLIENTTEXTINFO.fields_by_name['rows'].message_type = _CLIENTTEXTINFO
+DESCRIPTOR.message_types_by_name['ClientTextInfo'] = _CLIENTTEXTINFO
+DESCRIPTOR.message_types_by_name['table_ClientTextInfo'] = _TABLE_CLIENTTEXTINFO
+_sym_db.RegisterFileDescriptor(DESCRIPTOR)
+
 ClientTextInfo = _reflection.GeneratedProtocolMessageType('ClientTextInfo', (_message.Message,), {
   'DESCRIPTOR' : _CLIENTTEXTINFO,
   '__module__' : 'ResTextClient_pb2'
@@ -34,11 +385,5 @@ table_ClientTextInfo = _reflection.GeneratedProtocolMessageType('table_ClientTex
   })
 _sym_db.RegisterMessage(table_ClientTextInfo)
 
-if _descriptor._USE_C_DESCRIPTORS == False:
 
-  DESCRIPTOR._options = None
-  _CLIENTTEXTINFO._serialized_start=47
-  _CLIENTTEXTINFO._serialized_end=629
-  _TABLE_CLIENTTEXTINFO._serialized_start=631
-  _TABLE_CLIENTTEXTINFO._serialized_end=706
 # @@protoc_insertion_point(module_scope)

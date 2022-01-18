@@ -1,8 +1,14 @@
 # encoding: utf-8
 # -*- coding: utf-8 -*-
 import sys
+import os
 from optparse import OptionParser
-from google.protobuf import message, text_format, text_encoding
+# from google.protobuf import message, text_format, text_encoding
+
+print("sys.path", sys.path)
+current_dir = os.path.abspath(os.path.dirname('__file__'))
+print("replace.py current dir: ", current_dir)
+sys.path.append(current_dir)
 
 
 # Helper Function:
@@ -31,7 +37,6 @@ def replace_target_bin(bytes_string):
     for row in bytes_string.get('1'):
         if row.get('1') == b'C_LOGIN_BTN_QQ':
             # Replace the text in dict
-            row.get('2')
             # print(bin_raw)
             row['2'] = '与QQ好友玩 u1'
             # print(row)
@@ -80,7 +85,6 @@ def run(options):
         f.close()
     elif options.wiretype:
         import blackboxprotobuf as bbp
-
         # Decode .pbin file to dict type
         txt_decode, typedef = bbp.decode_message(bytes_string)  # 返回的文件数据类型是dict dict of a list of dicts
         print("{0} DECODE DONE!".format(file_name))
