@@ -32,6 +32,7 @@ def replace_target(table_client_text_info):
             print("REPLACE COMPLETE!!")
 
 
+# 此处可考虑改进成递归遍历的结构，不使用key:1, key:2
 # Replace the byte string not depends on the .proto file
 def replace_target_bin(bytes_string):
     for row in bytes_string.get('1'):
